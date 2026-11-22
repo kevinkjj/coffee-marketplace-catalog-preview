@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: coffee-marketplace-catalog-preview
+    runtime: static
+    buildCommand: echo "Publishing the reviewed catalog snapshot"
+    staticPublishPath: ./public
+    autoDeployTrigger: off
+    routes:
+      - type: rewrite
+        source: /api/platform/approved-catalog
+        destination: /api/platform/approved-catalog.json
+    headers:
+      - path: /api/platform/approved-catalog*
+        name: Cache-Control
+        value: no-store
+      - path: /api/platform/approved-catalog*
+        name: Access-Control-Allow-Origin
+        value: '*'
+      - path: /api/platform/approved-catalog*
+        name: X-Content-Type-Options
+        value: nosniff

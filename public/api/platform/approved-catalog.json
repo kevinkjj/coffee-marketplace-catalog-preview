@@ -1,0 +1,328 @@
+{
+  "publication": "approved_local_pilot",
+  "products": [
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_3d694997-37ab-4b0f-b05d-0402adbd6d17",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "32BAJLV34PSE45EIBUKCUXCA",
+      "name": "101 SUBTEXT Colombia, Wilson alba, Washed (15hr sealed fermentation de-pulped, 48hr barrel fermentation)",
+      "description": "A reserve filter release from Wilson Alba at F. Sierra Morena in Palestina, Huila. This washed Pink Bourbon combines staged fermentation with careful processing to create a juicy, complex cup with vibrant acidity and expressive tropical fruit character.\n⠀\nTASTES LIKE: White Peach, Jasmine, Grapefruit\n⠀\nPRODUCER: Wilson Alba\nREGION: Palestina, Huila\nVARIETAL: Pink Bourbon\nPROCESS: Washed (15-hour Sealed Fermentation + 48-hour Barrel Fermentation)\nALTITUDE: Not Provided\n⠀\nSTORY\nWilson Alba is the producer behind this Copa de Oro finalist lot from F. Sierra Morena in Palestina, Huila.\n⠀\nThe coffee is a Pink Bourbon processed using a multi-stage washed method. The cherries first undergo 15 hours of sealed fermentation before being de-pulped, followed by a further 48 hours of barrel fermentation.\n⠀\nThe resulting cup is described as juicy, complex, and vibrant, with notes of peach, lemonade, and tropical fruit alongside pronounced acidity.\n⠀\nORIGIN\nPalestina, Huila, Colombia\nThis coffee comes from F. Sierra Morena in Palestina, Huila, Colombia.\n⠀\nThe packaging does not provide additional farm history, altitude, or regional background, so I have not added any unsupported details.",
+      "reportingCategory": "Pour Over",
+      "kind": "drink",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/a69fa74d725404ee1a615daf0e788c6043dd3f3f/original.png"
+      ],
+      "pickup": true,
+      "shipping": false,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "TYAPVJTGVO6WOVG4U4DK3BXD",
+          "platformVariationId": "pv_87915728-b0d5-4459-819e-2c653070532b",
+          "name": "Regular",
+          "priceCents": 1800,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/a69fa74d725404ee1a615daf0e788c6043dd3f3f/original.png"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_82c10c36-c927-4565-9532-0a7cb5c306a4",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "GYPAUZK2AK4CVQVEYREER7NA",
+      "name": "102 YELEI LAB Panama, Lerida Estate Lot10 Alto Quiel, Washed",
+      "description": "A washed Geisha from Lerida Estate Lot 10 in Alto Quiel, Panama. Grown at 1,900 metres above sea level, this high-elevation lot presents a delicate and aromatic profile with white florals, citrus, stone fruit, and tea-like complexity.\n⠀\nTASTES LIKE: Shine Muscat Grape, Lime, Darjeeling Tea\n⠀\nPRODUCER: Lerida Estate\nREGION: Alto Quiel\nVARIETAL: Geisha\nPROCESS: Washed\nALTITUDE: 1900 masl\n⠀\nSTORY\nThis Lot 10 comes from Lerida Estate in Alto Quiel, Panama and is planted with the Geisha variety at 1,900 metres above sea level.\n⠀\nThe coffee is processed using the washed method, highlighting a clean and elegant expression of the variety. The profile shown on the packaging combines jasmine and bergamot florals with white peach, lemon, and Darjeeling tea.\n⠀\nORIGIN\nAlto Quiel, Panama\nThis coffee comes from Alto Quiel in Panama and was grown at 1,900 metres above sea level.\n⠀\nThe packaging identifies it as Lerida Estate Lot 10 and provides no additional farm or regional background, so no unsupported details have been added.",
+      "reportingCategory": "Pour Over",
+      "kind": "drink",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/02ef1e9270775734c98e129a3c7b0a01bd11272c/original.png"
+      ],
+      "pickup": true,
+      "shipping": false,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "346HILP7E2O5ABJPGSY4F2C4",
+          "platformVariationId": "pv_034f5b43-9243-4c6c-a594-dceb4c1110d9",
+          "name": "Regular",
+          "priceCents": 2200,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/02ef1e9270775734c98e129a3c7b0a01bd11272c/original.png"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_52c6c60c-b65a-4e05-b83f-1341deeb8da0",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "KY3MKSU3XTFIJIOPRLKYNVBC",
+      "name": "103 ARCHERS Ethiopia, Elto Elora Station, River Flow Natural Dark Room Drying",
+      "description": "A competition-series natural coffee from Elora Washing Station in Arbegona, Bona Village, Ethiopia. Grown at an exceptional elevation of 2,400 metres, this 74158 lot uses River Flow Natural processing with dark-room drying to create an intensely fruit-driven and expressive cup.\n⠀\nTASTES LIKE: Red Grape, Mango, Honey\n⠀\nPRODUCER: Eliyas Dukamo, Atikilt Dejene\nREGION: Arbegona, Bona Village\nVARIETAL: 74158\nPROCESS: River Flow Natural – Dark Room Drying\nALTITUDE: 2400 masl\n⠀\nSTORY\nThis competition-series coffee comes from Elora Washing Station in Arbegona, Bona Village, Ethiopia, and carries a 90+ cup score.\n⠀\nProduced by Eliyas Dukamo and Atikilt Dejene, the coffee is grown at 2,400 metres above sea level and consists of the Ethiopian 74158 variety.\n⠀\nThe lot undergoes a River Flow Natural process followed by dark-room drying, resulting in an expressive profile featuring mango, peach, red grape, lychee, blueberry, and bubblegum.\n⠀\nORIGIN\nArbegona, Bona Village, Ethiopia\nThis coffee is produced at Elora Washing Station in Arbegona, Bona Village, at an elevation of 2,400 metres above sea level.\n⠀\nThe packaging does not provide additional regional or farm background, so no unsupported origin details have been added.",
+      "reportingCategory": "Pour Over",
+      "kind": "drink",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/42fd95a434f84a090c7522824aa161c2abb62e0e/original.png"
+      ],
+      "pickup": true,
+      "shipping": false,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "55HKQ75H6DJB6MJMDF6RLIB5",
+          "platformVariationId": "pv_1a676f82-babf-480d-a952-0987874a9e59",
+          "name": "Regular",
+          "priceCents": 2000,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/42fd95a434f84a090c7522824aa161c2abb62e0e/original.png"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_f8714769-6f32-4054-8e07-a2c7b6089036",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "4ABWLJQKAE7L5SX4QURDXDCG",
+      "name": "CAFE FADUCCI OMNI Colombia, Excelso Las Moras, Natural 200g",
+      "description": "A naturally processed coffee from Las Moras in Pitalito, Huila, grown at elevations between 1,700 and 1,900 metres. This lot combines careful cherry selection and controlled processing to create a rich, expressive cup with vibrant fruit character, depth, and complexity.\n\nTASTES LIKE: Blackberry Compote, Shiraz, Ribena\n\nPRODUCER: Las Moras\nREGION: Pitalito, Huila\nVARIETAL: Caturra, Bourbon Amarillo, Colombia\nPROCESS: Natural\nALTITUDE: 1700–1900 masl\n\nSTORY\nColombia Excelso Las Moras is cultivated in the renowned Pitalito region of Huila, Colombia, an area celebrated for its rich coffee heritage and ideal growing conditions. Situated at elevations ranging from 1,700 to 1,900 metres above sea level, the region provides an excellent environment for producing high-quality specialty coffee.\n\nThe varieties used in this coffee include Caturra, Bourbon Amarillo and Colombia, each contributing to the distinctive character of the Las Moras lot.\n\nThe processing of Colombia Excelso Las Moras follows a carefully controlled method designed to preserve quality and build complexity. Freshly harvested cherries are thoroughly sorted to remove underripe fruit, leaves and debris, ensuring that only the best cherries continue through processing.\n\nThe cherries then undergo a 24-hour oxidation period, allowing the coffee to develop greater aromatic complexity before moving through the remaining processing stages.\n\nFinally, the coffee undergoes controlled mechanical drying, helping stabilise the beans while preserving the flavour compounds developed throughout the process. The result is a coffee with body, intensity and complexity that reflects the care taken at every stage.\n\nORIGIN\nPitalito, Huila, Colombia\nPitalito is one of the most recognised coffee-producing areas in Huila and is widely regarded as one of Colombia’s leading specialty coffee regions. Its high elevations, fertile soils and cool mountain climate allow coffee cherries to mature slowly, supporting the development of sweetness, acidity and complexity.\n\nHuila has earned an international reputation for expressive and high-quality coffees, with Pitalito playing an important role in that recognition. The combination of favourable growing conditions and meticulous farming and processing practices continues to make coffees from this region highly sought after within the specialty coffee industry.",
+      "reportingCategory": "Coffee Beans",
+      "kind": "beans",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/2debe37c8e9b1fd5f5d91b6c931588b2b1d05c2f/original.png"
+      ],
+      "pickup": true,
+      "shipping": true,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "MQL45HWW2SQQ2EBYX6FDMMBN",
+          "platformVariationId": "pv_29336508-e686-423e-b678-fae8115aff28",
+          "name": "Regular",
+          "priceCents": 3500,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/2debe37c8e9b1fd5f5d91b6c931588b2b1d05c2f/original.png"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_1bc703ea-8a9d-45b3-b150-d4a1398005a8",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "KVFLQQBB2PKBR4FFD7QUHNPM",
+      "name": "CAFE FADUCCI OMNI Ethiopia, Halo Beriti, Washed 200g",
+      "description": "A Grade 1 washed coffee from Halo Beriti Washing Station in Yirgacheffe, Ethiopia. Produced from carefully selected cherries delivered by local smallholder farmers, this Special Prep lot undergoes repeated hand-sorting throughout receiving and drying to ensure exceptional quality and clarity.\n⠀\nTASTES LIKE: Floral, Citrus, Earl Grey\n⠀\nPRODUCER: Halo Beriti Washing Station / Smallholder Producers\nREGION: Yirgacheffe\nVARIETAL: Heirloom Ethiopian Varieties\nPROCESS: Washed\nALTITUDE: 2100–2300 masl\n⠀\nSTORY\nHalo Beriti Washing Station was established in 2014 and serves 750 smallholder producers, who deliver their coffee in cherry form.\n⠀\nThis particular lot is part of a “special preparation” in which hand-sorting was done repeatedly throughout the receiving and drying process, ensuring that only perfect coffees made it into the bags.\n⠀\nWith the special prep, what producers generally call “Premium” in Ethiopia, cherries are collected from a limited number of smallholder farmers. Around 90% of the cherries are perfectly picked at the correct red colour, with approximately 5% semi-red and 5% overripe. These cherries are processed and stored separately from other lots, with only a small number of bags produced this way each year.\n⠀\nThe coffee is typically picked ripe and depulped the same day. Fermentation generally lasts 8–12 hours in open-air tanks before the coffee is washed in water channels to remove the mucilage. The seeds are then spread on raised beds to dry for approximately 5–15 days, depending on the weather.\n⠀\nORIGIN\nYirgacheffe, Ethiopia\nYirgacheffe is renowned for producing distinctive and complex coffees. The region’s thick vegetation is supported by a warm tropical climate with moderate wet and dry seasons, while most coffee is shade-grown by small producers using organic practices.\n⠀\nCoffee is cultivated between approximately 1,600 and 2,400 metres above sea level across the Yirgacheffe highlands. The large number of microregions and washing stations contributes to a wide range of cup profiles and expressions.\n⠀\nEthiopia holds a unique position in the coffee world as the birthplace of Arabica coffee. Coffee cultivation, processing, and consumption have been part of everyday life for centuries, with many producers cultivating coffee on very small plots that function more like coffee gardens or forest environments than conventional farms.\n⠀\nThe majority of Ethiopian producers are smallholders, often farming less than one hectare of land. These producers commonly deliver freshly picked cherries to nearby washing stations, where coffees are sorted, processed, and dried before export.",
+      "reportingCategory": "Coffee Beans",
+      "kind": "beans",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/5502b6ee2a51dca9163d83dea4144e1ab69fb48a/original.png"
+      ],
+      "pickup": true,
+      "shipping": true,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "YRYIRDJG4YH3Y23BI6L4E664",
+          "platformVariationId": "pv_c39bf4f7-276f-412b-95b2-2b4eaf848e46",
+          "name": "Regular",
+          "priceCents": 3500,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/5502b6ee2a51dca9163d83dea4144e1ab69fb48a/original.png"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_8a794612-1325-4ac1-83d3-f8f7d0fb1e2d",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "QW3QS26DVUE56Q5AZC5HYFAF",
+      "name": "CAFE FADUCCI OMNI Peru, Utcubamba, Washed 200g",
+      "description": "A farm-traceable washed Gesha microlot from producer Ricarte Rojas Oblitas in Peru. Grown on his 0.75-hectare farm at 1,750 metres above sea level, this lot reflects careful hand harvesting, precise washed processing, and a strong commitment to environmental stewardship.\n⠀\nTASTES LIKE: White Peach, Pear, Green Grape\n⠀\nPRODUCER: Ricarte Rojas Oblitas\nREGION: Utcubamba, Amazonas\nVARIETAL: Gesha\nPROCESS: Washed\nALTITUDE: 1750 masl\n⠀\nSTORY\nRicarte Rojas Oblitas owns a 0.75-hectare farm located in the Utcubamba province of the Amazonas department. The farm is home to around 3,200 Gesha trees.\n⠀\nRicarte grows coffee with passion, carrying out the entire process under technical guidance. His coffee is washed processed after being carefully harvested by hand.\n⠀\nCaring for the environment is important to his work. He conserves the forest trees on the farm to better protect the land and produces his own compost as fertiliser. Within the community, he also contributes to environmental stewardship.\n⠀\nHis long-term goals are to sell directly to customers in other countries and achieve a better quality of life.\n⠀\nThis coffee is part of Café Imports’ Peru Microlot program. Microlots from Peru are traceable to the farm level and represent some of the highest-quality coffees selected from individual producers.\n⠀\nORIGIN\nUtcubamba, Amazonas, Peru\nUtcubamba is located in the Amazonas department of northern Peru, where Ricarte Rojas Oblitas’ farm is situated. The farm sits at 1,750 metres above sea level and is planted with around 3,200 Gesha trees.\n⠀\nThe PDF separately lists Cajamarca as the coffee’s region, while its producer profile specifically places the farm in Utcubamba province, Amazonas. For this listing, Utcubamba, Amazonas is used because it is the most precise farm-location information provided in the source.\n⠀\nWashed processing is common in Peru. Coffees are typically depulped on the day of harvest, fermented for around 12–18 hours in open-air tanks, washed clean of mucilage, and then dried using methods such as patios, raised beds, parabolic dryers, or mechanical drying.",
+      "reportingCategory": "Coffee Beans",
+      "kind": "beans",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/63568635582d2c0ede3bc2cdbfab454953f46803/original.png"
+      ],
+      "pickup": true,
+      "shipping": true,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "SXFWBULPCA6AOU67DONWHF5I",
+          "platformVariationId": "pv_7bb3dda5-4cf8-4ad6-88ef-47505c8d5971",
+          "name": "Regular",
+          "priceCents": 3500,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/63568635582d2c0ede3bc2cdbfab454953f46803/original.png"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_99e0dc6a-0f13-457c-a9e8-51557d68e059",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "F6QGEFNGY4FPMUP7LWTEXQMG",
+      "name": "HARIO V60 Filter Papers Size 01",
+      "description": "The most popular filters from Hario are extremely high quality; ensuring great coffee taste every single time. The Hario filter paper for 01 V60 dripper is an essential item for any brewer. The filters produce clear and clean cup with no papery taste at all. V60 filters have a very responsive flow rate, which allows great control over your brewing time. The white filter papers are disposable, making them ideal for V60 pour-over. If you want to brew coffee properly then the V60 filter papers are an necessary part of the brewing process.\n\nMADE IN JAPAN",
+      "reportingCategory": "Retail",
+      "kind": "retail",
+      "imageUrls": [
+        "https://square-production.s3.amazonaws.com/files/cc34f7bc8f2d40cb48b85f5bc0129ec903d08caa/original.jpeg"
+      ],
+      "pickup": true,
+      "shipping": true,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "WFH552D22F6AX725EKKWTTJD",
+          "platformVariationId": "pv_67349389-1c99-4d74-b87d-b0ef6b465614",
+          "name": "Regular",
+          "priceCents": 1200,
+          "imageUrls": [
+            "https://square-production.s3.amazonaws.com/files/cc34f7bc8f2d40cb48b85f5bc0129ec903d08caa/original.jpeg"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    },
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "platformMerchantId": "pm_838a0f08-8dae-4636-b0b5-107da889a383",
+      "platformLocationId": "pl_2895aaa5-1922-455f-8b32-9b3e8540b846",
+      "platformProductId": "pp_cd1e6395-b377-4c82-9bad-cb1d10c8c319",
+      "catalogProvider": "square",
+      "locationId": "2YJP6XE48M2KW",
+      "locationName": "CAFE FADUCCI",
+      "itemId": "PHWDNGK36EIATYBLARWZYVYH",
+      "name": "KONO Meimon Dripper Clear",
+      "description": "Designed by the second president of the Kono Coffee Syphon Company after years in development, the distinctive conical shape of the design ensures that water is spread evenly throughout the filter and drips through at a steady speed.\n\nThe grooves in the lower half of the cone give a snugger fit for the filter, resulting in reduced sediment, improved airflow and ultimately a richer, fuller flavored coffee. With a little patience and practice you’ll quickly master the skills required to fill your kitchen with the rich, comforting aroma of filter-dripped coffee.\nThe Kono brand is favored by households and professional barista’s throughout Japan. The resulting coffee is nothing short of perfection!\n\nMaterial:Acrylic resin\nMADE IN JAPAN",
+      "reportingCategory": "Retail",
+      "kind": "retail",
+      "imageUrls": [
+        "https://items-images-production.s3.us-west-2.amazonaws.com/files/e375592ecc26954d44bd5ece768d5c073942885d/original.jpeg"
+      ],
+      "pickup": true,
+      "shipping": true,
+      "sourceGeneratedAt": "2026-11-22T21:32:14.253Z",
+      "variations": [
+        {
+          "id": "RRC6EDLHLB2XOJX47FLKEFLI",
+          "platformVariationId": "pv_f457b64c-3571-4978-8a91-005fb12c9953",
+          "name": "Regular",
+          "priceCents": 3200,
+          "imageUrls": [
+            "https://items-images-production.s3.us-west-2.amazonaws.com/files/e375592ecc26954d44bd5ece768d5c073942885d/original.jpeg"
+          ],
+          "inventoryStatus": "unknown",
+          "inStockQuantity": null,
+          "canOrder": true
+        }
+      ]
+    }
+  ],
+  "shippingCoverage": [
+    {
+      "merchantId": "16R64GBR4C1AA",
+      "locationId": "2YJP6XE48M2KW",
+      "mode": "auspost_standard",
+      "combinations": [
+        {
+          "contents": [
+            {
+              "itemId": "4ABWLJQKAE7L5SX4QURDXDCG",
+              "variationId": "MQL45HWW2SQQ2EBYX6FDMMBN",
+              "quantity": 1
+            },
+            {
+              "itemId": "F6QGEFNGY4FPMUP7LWTEXQMG",
+              "variationId": "WFH552D22F6AX725EKKWTTJD",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "contents": [
+            {
+              "itemId": "F6QGEFNGY4FPMUP7LWTEXQMG",
+              "variationId": "WFH552D22F6AX725EKKWTTJD",
+              "quantity": 1
+            },
+            {
+              "itemId": "KVFLQQBB2PKBR4FFD7QUHNPM",
+              "variationId": "YRYIRDJG4YH3Y23BI6L4E664",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "contents": [
+            {
+              "itemId": "F6QGEFNGY4FPMUP7LWTEXQMG",
+              "variationId": "WFH552D22F6AX725EKKWTTJD",
+              "quantity": 1
+            },
+            {
+              "itemId": "QW3QS26DVUE56Q5AZC5HYFAF",
+              "variationId": "SXFWBULPCA6AOU67DONWHF5I",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
