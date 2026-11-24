@@ -1,21 +1,47 @@
 <!doctype html>
 <html lang="en-AU">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Charsiu · Catalogue Preview</title>
-<style>
-  :root { color-scheme: light; font-family: system-ui, sans-serif; }
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f5f5; color: #171717; }
-  main { max-width: 36rem; padding: 2.5rem; margin: 1rem; background: #fff; border: 1px solid #dedede; border-radius: 1rem; }
-  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; margin: .5rem 0 1rem; }
-  p { color: #555; line-height: 1.55; }
-  .tagline { font-size: 1.25rem; color: #171717; font-weight: 600; }
-  .eyebrow { letter-spacing: .14em; font-size: .75rem; font-weight: 700; text-transform: uppercase; color: #666; }
-</style>
-<main>
-  <p class="eyebrow">Browsing preview</p>
-  <h1>Charsiu</h1>
-  <p class="tagline">Good coffee, from good cafés.</p>
-  <p>Our iPhone catalogue preview is being prepared. Prices are a snapshot; availability is not live. Orders and payments are not available yet.</p>
-</main>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f5">
+  <meta name="description" content="Discover coffee beans, drinks and brew gear from independent cafés on Charsiu. Browsing preview only.">
+  <title>Charsiu · Good coffee, from good cafés</title>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#collection" data-i18n="skip">Skip to products</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#top" aria-label="Charsiu home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" width="27" height="27"><path fill="white" d="M20.3 3.3C10.5 4.1 5.4 13.4 7.4 22.1c1.5 6.5 6.4 10.7 12.4 10.7 6.8 0 10.8-6.9 9.3-14.4C28.3 9.4 24.8 4 20.3 3.3Z"/><path fill="none" stroke="#171717" stroke-width="2.4" stroke-linecap="round" d="M15.7 6.9c-2.4 8.5 1.8 12.7 4.4 17.9"/></svg></span><span>CHARSIU</span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="#collection" data-i18n="navProducts">Products</a><a href="#about" data-i18n="navAbout">About</a></nav>
+    <label class="language-control"><span aria-hidden="true">文A</span><span class="sr-only" data-i18n="languageLabel">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="zh-Hans">简体</option><option value="zh-Hant">繁體</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
+  </div></header>
+  <main id="top"><div class="page-shell">
+    <div class="preview-banner" role="note"><span aria-hidden="true">◇</span><span data-i18n="previewNotice">BROWSING PREVIEW · Products are not live for ordering.</span></div>
+    <section class="hero" aria-labelledby="hero-title"><div class="hero-content">
+      <p class="hero-eyebrow" data-i18n="heroEyebrow">A BETTER DAILY RITUAL</p>
+      <h1 id="hero-title"><span data-i18n="heroLineOne">Good coffee,</span><br><span data-i18n="heroLineTwo">from good cafés.</span></h1>
+      <p class="hero-description" data-i18n="heroDescription">Discover beans, brew gear and your next cup from independent cafés.</p>
+      <a class="hero-link" href="#collection" data-i18n="explore">Explore the collection</a>
+    </div><div class="hero-orbit" aria-hidden="true"></div></section>
+    <section id="collection" class="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="section-eyebrow" data-i18n="collectionEyebrow">CHOSEN FOR YOU</p><h2 id="collection-title" data-i18n="collectionTitle">Explore good coffee</h2></div><p id="catalog-count" class="catalog-count" aria-live="polite"></p></div>
+      <div class="catalog-controls"><label class="search-control"><span class="sr-only" data-i18n="searchLabel">Search products</span><svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.7"/><path d="m16 16 5 5"/></svg><input id="search" type="search" autocomplete="off" placeholder="Search coffee, gear or cafés"></label>
+        <div class="filters" role="group" aria-label="Product categories"><button type="button" data-kind="all" data-i18n="filterAll" aria-pressed="true">All</button><button type="button" data-kind="beans" data-i18n="filterBeans" aria-pressed="false">Coffee beans</button><button type="button" data-kind="drink" data-i18n="filterDrinks" aria-pressed="false">Drinks</button><button type="button" data-kind="retail" data-i18n="filterGear" aria-pressed="false">Brew gear</button></div>
+      </div>
+      <div id="catalog-status" class="catalog-status" role="status" aria-live="polite" data-i18n="loading">Loading the collection…</div>
+      <div id="snapshot-note" class="snapshot-note" role="note" hidden><span data-i18n="snapshotNotice">Showing an earlier catalogue snapshot. Product details may have changed.</span><button id="refresh-live" type="button" data-i18n="refreshLive">Retry live catalogue</button></div>
+      <div id="catalog-error" class="catalog-error" role="alert" hidden><p data-i18n="loadError">The café catalogue is unavailable right now. Please try again.</p><button id="retry" type="button" data-i18n="retry">Try again</button></div>
+      <div id="catalog-grid" class="catalog-grid"></div>
+      <p id="empty-results" class="empty-results" data-i18n="emptyResults" hidden>No products match your search.</p>
+    </section>
+    <section id="about" class="about" aria-labelledby="about-title"><div><p class="section-eyebrow" data-i18n="aboutEyebrow">FROM INDEPENDENT CAFÉS</p><h2 id="about-title" data-i18n="aboutTitle">A better way to discover your next cup.</h2></div><div><p data-i18n="aboutBody">Charsiu brings together considered coffee and the people behind it. This preview features Café Faducci's approved selection. Product names and descriptions are shown as the café wrote them.</p><p class="about-note" data-i18n="aboutNote">Ordering and payment are not available on this website yet.</p></div></section>
+  </div></main>
+  <footer class="site-footer"><div class="page-shell footer-inner"><span>© <span id="year"></span> CHARSIU</span><span data-i18n="footerNote">Independent coffee, thoughtfully found.</span></div></footer>
+  <dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-title"><div class="dialog-shell">
+    <button id="close-detail" class="dialog-close" type="button" aria-label="Close product details">×</button>
+    <div class="dialog-media"><img id="detail-image" alt=""><div id="detail-fallback" class="media-fallback" hidden>CHARSIU</div></div>
+    <div class="dialog-content"><p id="detail-kind" class="section-eyebrow"></p><h2 id="detail-title"></h2><p id="detail-location" class="detail-location"></p><p id="detail-price" class="detail-price"></p><div id="detail-fulfillment" class="detail-fulfillment"></div><h3 data-i18n="descriptionTitle">From the café</h3><p id="detail-description" class="detail-description"></p><p class="detail-notice" data-i18n="detailNotice">Browsing preview only. Orders and payments are not available yet.</p></div>
+  </div></dialog>
+</body>
 </html>
