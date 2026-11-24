@@ -7,13 +7,14 @@
   <meta name="description" content="Discover coffee beans, drinks and brew gear from independent cafés on Charsiu. Browsing preview only.">
   <title>Charsiu · Good coffee, from good cafés</title>
   <link rel="stylesheet" href="/site.css">
-  <script src="/site.js" defer></script>
+  <script src="/site.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#collection" data-i18n="skip">Skip to products</a>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="#top" aria-label="Charsiu home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" width="27" height="27"><path fill="white" d="M20.3 3.3C10.5 4.1 5.4 13.4 7.4 22.1c1.5 6.5 6.4 10.7 12.4 10.7 6.8 0 10.8-6.9 9.3-14.4C28.3 9.4 24.8 4 20.3 3.3Z"/><path fill="none" stroke="#171717" stroke-width="2.4" stroke-linecap="round" d="M15.7 6.9c-2.4 8.5 1.8 12.7 4.4 17.9"/></svg></span><span>CHARSIU</span></a>
     <nav class="nav-links" aria-label="Main navigation"><a href="#collection" data-i18n="navProducts">Products</a><a href="#about" data-i18n="navAbout">About</a></nav>
+    <a class="bag-link" href="#bag"><span data-i18n="navBag">Bag</span><span id="bag-count" aria-live="polite">0</span></a>
     <label class="language-control"><span aria-hidden="true">文A</span><span class="sr-only" data-i18n="languageLabel">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="zh-Hans">简体</option><option value="zh-Hant">繁體</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
   </div></header>
   <main id="top"><div class="page-shell">
@@ -35,13 +36,33 @@
       <div id="catalog-grid" class="catalog-grid"></div>
       <p id="empty-results" class="empty-results" data-i18n="emptyResults" hidden>No products match your search.</p>
     </section>
+    <section id="bag" class="bag-section" aria-labelledby="bag-title">
+      <div class="section-heading"><div><p class="section-eyebrow" data-i18n="bagEyebrow">YOUR SELECTION</p><h2 id="bag-title" data-i18n="bagTitle">Your bag</h2></div></div>
+      <p class="bag-intro" data-i18n="bagIntro">Save a draft selection on this device. No order or payment will be made.</p>
+      <p id="bag-empty" class="bag-empty" data-i18n="bagEmpty">Your bag is empty. Explore the collection to add products.</p>
+      <div id="bag-content" hidden>
+        <div id="bag-lines" class="bag-lines"></div>
+        <div class="bag-summary"><span data-i18n="goodsSubtotal">Goods subtotal</span><strong id="bag-subtotal"></strong></div>
+        <p class="bag-estimate" data-i18n="bagEstimate">A draft subtotal from the current catalogue. Tax, delivery and final prices are not quoted yet.</p>
+        <p id="bag-warning" class="bag-warning" data-i18n="bagUnavailable" hidden>Some products are no longer available. Remove them before reviewing.</p>
+        <button id="review-bag" class="review-button" type="button" data-i18n="reviewBag">Review draft bag</button>
+      </div>
+      <div id="bag-review" class="bag-review" hidden>
+        <h3 data-i18n="reviewTitle">Draft order review</h3>
+        <div id="bag-groups"></div>
+        <div class="bag-summary"><span data-i18n="goodsSubtotal">Goods subtotal</span><strong id="review-subtotal"></strong></div>
+        <p data-i18n="reviewNotice">This is a draft only. Pickup times, stock, tax, shipping and the final total require a fresh server quote. Ordering and payment are closed.</p>
+      </div>
+    </section>
     <section id="about" class="about" aria-labelledby="about-title"><div><p class="section-eyebrow" data-i18n="aboutEyebrow">FROM INDEPENDENT CAFÉS</p><h2 id="about-title" data-i18n="aboutTitle">A better way to discover your next cup.</h2></div><div><p data-i18n="aboutBody">Charsiu brings together considered coffee and the people behind it. This preview features Café Faducci's approved selection. Product names and descriptions are shown as the café wrote them.</p><p class="about-note" data-i18n="aboutNote">Ordering and payment are not available on this website yet.</p></div></section>
   </div></main>
   <footer class="site-footer"><div class="page-shell footer-inner"><span>© <span id="year"></span> CHARSIU</span><span data-i18n="footerNote">Independent coffee, thoughtfully found.</span></div></footer>
   <dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-title"><div class="dialog-shell">
     <button id="close-detail" class="dialog-close" type="button" aria-label="Close product details">×</button>
     <div class="dialog-media"><img id="detail-image" alt=""><div id="detail-fallback" class="media-fallback" hidden>CHARSIU</div></div>
-    <div class="dialog-content"><p id="detail-kind" class="section-eyebrow"></p><h2 id="detail-title"></h2><p id="detail-location" class="detail-location"></p><p id="detail-price" class="detail-price"></p><div id="detail-fulfillment" class="detail-fulfillment"></div><h3 data-i18n="descriptionTitle">From the café</h3><p id="detail-description" class="detail-description"></p><p class="detail-notice" data-i18n="detailNotice">Browsing preview only. Orders and payments are not available yet.</p></div>
+    <div class="dialog-content"><p id="detail-kind" class="section-eyebrow"></p><h2 id="detail-title"></h2><p id="detail-location" class="detail-location"></p><p id="detail-price" class="detail-price"></p><div id="detail-fulfillment" class="detail-fulfillment"></div><h3 data-i18n="descriptionTitle">From the café</h3><p id="detail-description" class="detail-description"></p>
+      <div class="detail-bag"><label><span data-i18n="variationLabel">Variation</span><select id="detail-variation"></select></label><label><span data-i18n="quantityLabel">Quantity</span><input id="detail-quantity" type="number" inputmode="numeric" min="1" max="99" value="1"></label><label><span data-i18n="fulfillmentLabel">Delivery method</span><select id="detail-method"></select></label><button id="add-to-bag" type="button" data-i18n="addToBag">Add to bag</button><p id="detail-bag-message" role="status" aria-live="polite"></p></div>
+      <p class="detail-notice" data-i18n="detailNotice">Browsing preview only. Orders and payments are not available yet.</p></div>
   </div></dialog>
 </body>
 </html>
