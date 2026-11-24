@@ -2,8 +2,11 @@ import { addDraftBagLine, draftBagPreview,
   normalizeDraftBag } from './bag-model.mjs';
 
 // The website uses the approved catalogue for a browser-local draft bag.
-// No customer details, order, payment, or quoted total leave this page.
+// Only product IDs, quantities, pickup times, and postcodes reach the read-only quote API.
+// No customer details, order, or payment data leave this page.
 const CATALOG_URL = 'https://charsiu-approved-catalog.onrender.com/api/platform/approved-catalog';
+const QUOTE_BASE = ['127.0.0.1', 'localhost'].includes(location.hostname)
+  ? 'http://127.0.0.1:8795' : new URL(CATALOG_URL).origin;
 const SNAPSHOT_URL = '/api/platform/approved-catalog.json';
 const BAG_KEY = 'charsiu.web.draftBag.v1';
 const LOCALES = { en: 'en-AU', 'zh-Hans': 'zh-CN', 'zh-Hant': 'zh-TW', ja: 'ja-JP', ko: 'ko-KR' };
@@ -50,6 +53,15 @@ const COPY = {
   },
 };
 
+const QUOTE_COPY = {
+  en: { reviewNotice: 'Choose a pickup time or shipping postcode for a read-only server quote. Ordering and payment are closed.', pickupTimeLabel: 'Pickup time', pickupTimeChoose: 'Choose a pickup time', pickupTimeLoading: 'Loading pickup times…', pickupTimeUnavailable: 'Pickup times are unavailable right now.', postcodeLabel: 'Shipping postcode', postcodePlaceholder: '4-digit Australian postcode', requestQuote: 'Check live quote', quoteLoading: 'Checking current prices and availability…', quoteMissing: 'Choose a pickup time or enter a 4-digit postcode for each group.', quoteFailed: 'A live quote is unavailable right now. Please try again.', quoteTitle: 'Read-only server quote', quoteShipping: 'Shipping', quoteTax: 'Tax calculated by Square', quoteTotal: 'Quoted total', quoteBlocked: 'This group cannot be fully quoted with the current choices.', quoteNote: 'Prices and availability can change. This quote does not create an order or payment.' },
+  'zh-Hans': { reviewNotice: '选择自取时段或填写邮编，可获取服务器只读报价；目前不能下单或付款。', pickupTimeLabel: '自取时段', pickupTimeChoose: '请选择自取时段', pickupTimeLoading: '正在载入自取时段…', pickupTimeUnavailable: '暂时无法取得自取时段。', postcodeLabel: '收件邮编', postcodePlaceholder: '澳洲四位邮编', requestQuote: '核对实时报价', quoteLoading: '正在核对当前价格和库存…', quoteMissing: '请为每组选择自取时段或填写四位邮编。', quoteFailed: '暂时无法取得实时报价，请重试。', quoteTitle: '服务器只读报价', quoteShipping: '运费', quoteTax: 'Square 计算税额', quoteTotal: '报价总额', quoteBlocked: '当前选项无法取得此组完整报价。', quoteNote: '价格和库存可能变化。此报价不会创建订单或付款。' },
+  'zh-Hant': { reviewNotice: '選擇自取時段或填寫郵遞區號，可取得伺服器唯讀報價；目前不能下單或付款。', pickupTimeLabel: '自取時段', pickupTimeChoose: '請選擇自取時段', pickupTimeLoading: '正在載入自取時段…', pickupTimeUnavailable: '暫時無法取得自取時段。', postcodeLabel: '收件郵遞區號', postcodePlaceholder: '澳洲四位郵遞區號', requestQuote: '核對即時報價', quoteLoading: '正在核對目前價格和庫存…', quoteMissing: '請為每組選擇自取時段或填寫四位郵遞區號。', quoteFailed: '暫時無法取得即時報價，請重試。', quoteTitle: '伺服器唯讀報價', quoteShipping: '運費', quoteTax: 'Square 計算稅額', quoteTotal: '報價總額', quoteBlocked: '目前選項無法取得此組完整報價。', quoteNote: '價格和庫存可能變動。此報價不會建立訂單或付款。' },
+  ja: { reviewNotice: '受取日時か配送先の郵便番号を選ぶと、サーバーの参照専用見積もりを取得できます。注文と決済はまだできません。', pickupTimeLabel: '受取日時', pickupTimeChoose: '受取日時を選択', pickupTimeLoading: '受取日時を読み込み中…', pickupTimeUnavailable: '受取日時を取得できません。', postcodeLabel: '配送先の郵便番号', postcodePlaceholder: 'オーストラリアの4桁', requestQuote: '最新の見積もりを確認', quoteLoading: '現在の価格と在庫を確認中…', quoteMissing: '各グループの受取日時または4桁の郵便番号を入力してください。', quoteFailed: '最新の見積もりを取得できません。再試行してください。', quoteTitle: 'サーバーの参照専用見積もり', quoteShipping: '送料', quoteTax: 'Squareが計算した税額', quoteTotal: '見積もり合計', quoteBlocked: '現在の選択内容では、このグループの見積もりを完了できません。', quoteNote: '価格と在庫は変わる場合があります。注文や決済は行われません。' },
+  ko: { reviewNotice: '픽업 시간이나 배송지 우편번호를 선택하면 서버의 읽기 전용 견적을 받을 수 있습니다. 주문과 결제는 아직 제공되지 않습니다.', pickupTimeLabel: '픽업 시간', pickupTimeChoose: '픽업 시간을 선택하세요', pickupTimeLoading: '픽업 시간을 불러오는 중…', pickupTimeUnavailable: '현재 픽업 시간을 불러올 수 없습니다.', postcodeLabel: '배송지 우편번호', postcodePlaceholder: '호주 4자리 우편번호', requestQuote: '현재 견적 확인', quoteLoading: '현재 가격과 재고 확인 중…', quoteMissing: '각 그룹의 픽업 시간 또는 4자리 우편번호를 입력하세요.', quoteFailed: '현재 견적을 불러올 수 없습니다. 다시 시도하세요.', quoteTitle: '서버 읽기 전용 견적', quoteShipping: '배송비', quoteTax: 'Square가 계산한 세금', quoteTotal: '견적 합계', quoteBlocked: '현재 선택으로는 이 그룹의 전체 견적을 확인할 수 없습니다.', quoteNote: '가격과 재고는 변경될 수 있습니다. 주문이나 결제는 진행되지 않습니다.' },
+};
+for (const [locale, copy] of Object.entries(QUOTE_COPY)) Object.assign(COPY[locale], copy);
+
 const nodes = {
   language: document.querySelector('#language'), search: document.querySelector('#search'),
   grid: document.querySelector('#catalog-grid'), count: document.querySelector('#catalog-count'),
@@ -66,6 +78,9 @@ const nodes = {
   bagGroups: document.querySelector('#bag-groups'),
   reviewSubtotal: document.querySelector('#review-subtotal'),
   reviewButton: document.querySelector('#review-bag'),
+  quoteButton: document.querySelector('#request-quote'),
+  quoteMessage: document.querySelector('#quote-message'),
+  quoteResult: document.querySelector('#quote-result'),
   detailVariation: document.querySelector('#detail-variation'),
   detailQuantity: document.querySelector('#detail-quantity'),
   detailMethod: document.querySelector('#detail-method'),
@@ -77,6 +92,13 @@ let kind = 'all';
 let selectedProduct = null;
 let draftBag = readDraftBag();
 let reviewOpen = false;
+let quoteVersion = 0;
+let quoteBusy = false;
+let quoteMessageKey = '';
+let serverQuote = null;
+let pickupLoadVersion = 0;
+const pickupSlots = new Map();
+const reviewDetails = new Map();
 
 function readDraftBag() {
   try { return normalizeDraftBag(JSON.parse(localStorage.getItem(BAG_KEY))); }
@@ -89,6 +111,13 @@ function saveDraftBag() {
 function changeDraftBag(next) {
   draftBag = normalizeDraftBag(next);
   reviewOpen = false;
+  quoteVersion += 1;
+  quoteBusy = false;
+  serverQuote = null;
+  quoteMessageKey = '';
+  pickupLoadVersion += 1;
+  pickupSlots.clear();
+  reviewDetails.clear();
   saveDraftBag();
   renderBag();
 }
@@ -163,6 +192,55 @@ function media(product) {
   } else holder.append(fallback);
   return holder;
 }
+function bagGroupKey(group) {
+  return `${group.merchantId}:${group.locationId}:${group.fulfillment}`;
+}
+function updateQuoteDetail(key, value) {
+  reviewDetails.set(key, value);
+  quoteVersion += 1;
+  quoteBusy = false;
+  serverQuote = null;
+  quoteMessageKey = '';
+  renderQuoteResult();
+}
+function quoteRow(label, value, extraClass = '') {
+  const row = element('div', `bag-group-row ${extraClass}`.trim());
+  row.append(element('span', '', label), element('strong', '', money(value)));
+  return row;
+}
+function renderQuoteResult() {
+  nodes.quoteButton.disabled = quoteBusy;
+  nodes.quoteMessage.textContent = quoteMessageKey ? t(quoteMessageKey) : '';
+  nodes.quoteResult.hidden = !serverQuote;
+  if (!serverQuote) {
+    nodes.quoteResult.replaceChildren();
+    return;
+  }
+  const content = [element('h4', '', t('quoteTitle'))];
+  let allQuoted = true;
+  let combinedTotal = 0;
+  for (const group of serverQuote.groups) {
+    const section = element('section', 'bag-group');
+    section.append(element('h4', '', `${group.locationName} · ${t(
+      group.fulfillment === 'pickup' ? 'methodPickup' : 'methodShipping')}`));
+    if (group.blockers.length || group.totalCents === null) {
+      allQuoted = false;
+      section.append(element('p', '', t('quoteBlocked')));
+    } else {
+      section.append(quoteRow(t('goodsSubtotal'), group.subtotalCents),
+        quoteRow(t('quoteShipping'), group.shippingCents),
+        quoteRow(t('quoteTax'), group.taxCents),
+        quoteRow(t('quoteTotal'), group.totalCents, 'quote-total'));
+      combinedTotal += group.totalCents;
+    }
+    content.push(section);
+  }
+  if (allQuoted && serverQuote.groups.length > 1) {
+    content.push(quoteRow(t('quoteTotal'), combinedTotal, 'quote-total'));
+  }
+  content.push(element('p', 'quote-note', t('quoteNote')));
+  nodes.quoteResult.replaceChildren(...content);
+}
 function renderBagReview(preview) {
   nodes.bagGroups.replaceChildren(...preview.groups.map((group) => {
     const card = element('section', 'bag-group');
@@ -179,9 +257,48 @@ function renderBagReview(preview) {
     subtotal.append(element('span', '', t('goodsSubtotal')),
       element('strong', '', money(group.subtotalCents)));
     card.append(subtotal);
+    const key = bagGroupKey(group);
+    if (group.fulfillment === 'pickup') {
+      const label = element('label', 'quote-field');
+      label.append(element('span', '', t('pickupTimeLabel')));
+      const select = document.createElement('select');
+      const slots = pickupSlots.get(key);
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = slots === undefined || slots === null
+        ? t('pickupTimeLoading') : slots.length
+          ? t('pickupTimeChoose') : t('pickupTimeUnavailable');
+      select.append(placeholder);
+      for (const slot of slots ?? []) {
+        const option = document.createElement('option');
+        option.value = slot.pickupAt;
+        option.textContent = `${slot.localDate} ${slot.localTime} · ${slot.timeZone}`;
+        select.append(option);
+      }
+      select.value = reviewDetails.get(key)?.pickupAt ?? '';
+      select.disabled = !slots?.length;
+      select.addEventListener('change', () => updateQuoteDetail(key,
+        { pickupAt: select.value }));
+      label.append(select);
+      card.append(label);
+    } else {
+      const label = element('label', 'quote-field');
+      label.append(element('span', '', t('postcodeLabel')));
+      const input = document.createElement('input');
+      input.type = 'text'; input.inputMode = 'numeric';
+      input.maxLength = 4; input.pattern = '[0-9]{4}';
+      input.autocomplete = 'postal-code';
+      input.placeholder = t('postcodePlaceholder');
+      input.value = reviewDetails.get(key)?.destinationPostcode ?? '';
+      input.addEventListener('input', () => updateQuoteDetail(key,
+        { destinationPostcode: input.value.trim() }));
+      label.append(input);
+      card.append(label);
+    }
     return card;
   }));
   nodes.reviewSubtotal.textContent = money(preview.subtotalCents);
+  renderQuoteResult();
 }
 function renderBag() {
   nodes.bagCount.textContent = String(draftBag.reduce((sum, line) =>
@@ -242,6 +359,93 @@ function renderBag() {
   nodes.reviewButton.disabled = preview.hasUnavailable;
   nodes.bagReview.hidden = !reviewOpen || preview.hasUnavailable;
   if (!nodes.bagReview.hidden) renderBagReview(preview);
+}
+async function previewJson(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 45_000);
+  try {
+    const response = await fetch(url, { ...options, cache: 'no-store',
+      signal: controller.signal });
+    if (!response.ok) throw new Error('preview_unavailable');
+    return response.json();
+  } finally { clearTimeout(timer); }
+}
+async function loadPickupSlots(groups) {
+  const loadVersion = ++pickupLoadVersion;
+  const pickups = groups.filter((group) => group.fulfillment === 'pickup');
+  for (const group of pickups) pickupSlots.set(bagGroupKey(group), null);
+  if (reviewOpen) renderBagReview(draftBagPreview(products, draftBag));
+  await Promise.all(pickups.map(async (group) => {
+    let slots = [];
+    try {
+      const query = new URLSearchParams({ platformMerchantId: group.merchantId,
+        platformLocationId: group.locationId });
+      const result = await previewJson(`${QUOTE_BASE}/api/platform/pickup-slots?${query}`);
+      if (Array.isArray(result.slots)) slots = result.slots.filter((slot) =>
+        typeof slot.pickupAt === 'string' &&
+        typeof slot.localDate === 'string' &&
+        typeof slot.localTime === 'string' &&
+        typeof slot.timeZone === 'string');
+    } catch { /* The unavailable state is shown beside this group. */ }
+    if (loadVersion !== pickupLoadVersion || !reviewOpen) return;
+    pickupSlots.set(bagGroupKey(group), slots);
+    renderBagReview(draftBagPreview(products, draftBag));
+  }));
+}
+async function requestLiveQuote() {
+  if (quoteBusy || !reviewOpen) return;
+  const preview = draftBagPreview(products, draftBag);
+  if (preview.hasUnavailable || !preview.lines.length) return;
+  const platformFulfillmentDetails = [];
+  for (const group of preview.groups) {
+    const detail = reviewDetails.get(bagGroupKey(group));
+    if (group.fulfillment === 'pickup' && !detail?.pickupAt ||
+      group.fulfillment === 'shipping' &&
+        !/^\d{4}$/.test(detail?.destinationPostcode ?? '')) {
+      quoteMessageKey = 'quoteMissing';
+      renderQuoteResult();
+      return;
+    }
+    platformFulfillmentDetails.push({ platformMerchantId: group.merchantId,
+      platformLocationId: group.locationId, fulfillment: group.fulfillment,
+      ...(group.fulfillment === 'pickup'
+        ? { pickupAt: detail.pickupAt }
+        : { destinationPostcode: detail.destinationPostcode }) });
+  }
+  const platformLines = preview.lines.map((line) => ({
+    platformMerchantId: line.product.platformMerchantId,
+    platformProductId: line.product.platformProductId,
+    platformVariationId: line.variation.platformVariationId,
+    quantity: line.quantity, fulfillment: line.fulfillment,
+  }));
+  const version = quoteVersion;
+  quoteBusy = true;
+  serverQuote = null;
+  quoteMessageKey = 'quoteLoading';
+  renderQuoteResult();
+  try {
+    const result = await previewJson(`${QUOTE_BASE}/api/platform/quote-preview`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ platformLines, platformFulfillmentDetails }),
+    });
+    if (version !== quoteVersion) return;
+    if (result.status !== 'preview_only' || result.canPlaceOrder !== false ||
+      !Array.isArray(result.groups) || result.groups.length !== preview.groups.length ||
+      result.groups.some((group) => !Array.isArray(group.blockers) ||
+        !Number.isSafeInteger(group.subtotalCents) ||
+        group.totalCents !== null && !Number.isSafeInteger(group.totalCents))) {
+      throw new Error('invalid_quote');
+    }
+    serverQuote = result;
+    quoteMessageKey = '';
+  } catch {
+    if (version === quoteVersion) quoteMessageKey = 'quoteFailed';
+  } finally {
+    if (version === quoteVersion) {
+      quoteBusy = false;
+      renderQuoteResult();
+    }
+  }
 }
 function renderCatalog() {
   if (!products.length) return;
@@ -359,6 +563,14 @@ async function fetchProducts(url, timeoutMs) {
   } finally { clearTimeout(timer); }
 }
 async function loadCatalog() {
+  reviewOpen = false;
+  quoteVersion += 1;
+  quoteBusy = false;
+  quoteMessageKey = '';
+  serverQuote = null;
+  pickupLoadVersion += 1;
+  pickupSlots.clear();
+  reviewDetails.clear();
   nodes.status.hidden = false;
   nodes.error.hidden = true;
   nodes.empty.hidden = true;
@@ -420,10 +632,13 @@ document.querySelector('#add-to-bag').addEventListener('click', () => {
   nodes.detailBagMessage.textContent = t('addedToBag');
 });
 nodes.reviewButton.addEventListener('click', () => {
+  const wasOpen = reviewOpen;
   reviewOpen = true;
   renderBag();
   nodes.bagReview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!wasOpen) void loadPickupSlots(draftBagPreview(products, draftBag).groups);
 });
+nodes.quoteButton.addEventListener('click', () => { void requestLiveQuote(); });
 nodes.dialog.addEventListener('click', (event) => { if (event.target === nodes.dialog) nodes.dialog.close(); });
 nodes.dialog.addEventListener('close', () => { selectedProduct = null; });
 applyLanguage();

@@ -51,7 +51,10 @@
         <h3 data-i18n="reviewTitle">Draft order review</h3>
         <div id="bag-groups"></div>
         <div class="bag-summary"><span data-i18n="goodsSubtotal">Goods subtotal</span><strong id="review-subtotal"></strong></div>
-        <p data-i18n="reviewNotice">This is a draft only. Pickup times, stock, tax, shipping and the final total require a fresh server quote. Ordering and payment are closed.</p>
+        <p data-i18n="reviewNotice">This is a draft only. Choose a pickup time or shipping postcode to request a read-only server quote. Ordering and payment are closed.</p>
+        <button id="request-quote" class="review-button" type="button" data-i18n="requestQuote">Check live quote</button>
+        <p id="quote-message" class="quote-message" role="status" aria-live="polite"></p>
+        <div id="quote-result" class="quote-result" hidden></div>
       </div>
     </section>
     <section id="about" class="about" aria-labelledby="about-title"><div><p class="section-eyebrow" data-i18n="aboutEyebrow">FROM INDEPENDENT CAFÉS</p><h2 id="about-title" data-i18n="aboutTitle">A better way to discover your next cup.</h2></div><div><p data-i18n="aboutBody">Charsiu brings together considered coffee and the people behind it. This preview features Café Faducci's approved selection. Product names and descriptions are shown as the café wrote them.</p><p class="about-note" data-i18n="aboutNote">Ordering and payment are not available on this website yet.</p></div></section>

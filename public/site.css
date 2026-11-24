@@ -89,6 +89,14 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .bag-group { padding: 16px 0; border-top: 1px solid #e0e0e0; }
 .bag-group h4 { font-size: 16px; margin: 0 0 10px; }
 .bag-group-row { display: flex; justify-content: space-between; gap: 18px; color: #444; margin: 8px 0; font-size: 14px; }
+.quote-field { display: grid; gap: 8px; max-width: 390px; margin: 18px 0 4px; color: #333; font-size: 14px; font-weight: 700; }
+.quote-field select, .quote-field input { width: 100%; min-height: 46px; border: 1px solid #bbb; border-radius: 9px; padding: 9px 12px; background: #fff; color: #111; font: inherit; }
+.quote-message { min-height: 23px; margin: 14px 0 0; }
+.quote-result { margin-top: 22px; border-top: 1px solid #ddd; }
+.quote-result h4 { margin: 20px 0 10px; font-size: 17px; }
+.quote-result .bag-group-row { margin: 10px 0; }
+.quote-result .quote-total { color: #111; font-weight: 750; font-size: 17px; border-top: 1px solid #e5e5e5; padding-top: 12px; }
+.quote-result .quote-note { margin-top: 14px; }
 .about { border-top: 1px solid #d8d8d8; padding: 58px 0 85px; display: grid; grid-template-columns: 1fr 1fr; gap: 55px; scroll-margin-top: 25px; }
 .about p:not(.section-eyebrow) { color: #444; font-size: 16px; line-height: 1.7; margin: 0; }
 .about p.about-note { margin-top: 18px; font-weight: 750; color: #111; }
