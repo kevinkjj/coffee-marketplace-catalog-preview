@@ -6,6 +6,13 @@
   <meta name="theme-color" content="#f5f5f5">
   <meta name="description" content="Discover coffee beans, drinks and brew gear from independent cafés on Charsiu. Browsing preview only.">
   <title>Charsiu · Good coffee, from good cafés</title>
+  <script>
+    // Auth invitations return to the configured site URL. Keep the session
+    // fragment in the browser while taking the user to password setup.
+    if (new URLSearchParams(location.hash.slice(1)).get('type') === 'invite') {
+      location.replace('/account.html' + location.hash);
+    }
+  </script>
   <link rel="stylesheet" href="/site.css">
   <script src="/site.js" type="module"></script>
 </head>
