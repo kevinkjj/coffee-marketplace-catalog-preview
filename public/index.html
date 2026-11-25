@@ -7,9 +7,9 @@
   <meta name="description" content="Discover coffee beans, drinks and brew gear from independent cafés on Charsiu. Browsing preview only.">
   <title>Charsiu · Good coffee, from good cafés</title>
   <script>
-    // Auth invitations return to the configured site URL. Keep the session
+    // Auth email links return to the configured site URL. Keep the session
     // fragment in the browser while taking the user to password setup.
-    if (new URLSearchParams(location.hash.slice(1)).get('type') === 'invite') {
+    if (['invite', 'recovery'].includes(new URLSearchParams(location.hash.slice(1)).get('type'))) {
       location.replace('/account.html' + location.hash);
     }
   </script>
