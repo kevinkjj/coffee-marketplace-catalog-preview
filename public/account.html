@@ -30,6 +30,16 @@
         <p id="account-message" class="account-message" role="alert" hidden></p>
         <button type="submit" id="account-submit">Sign in</button>
       </form>
+      <form id="account-setup" hidden>
+        <p id="account-setup-email-label" class="account-verified-label">Verified email</p>
+        <p id="account-setup-email" class="account-email-value"></p>
+        <label for="account-new-password" id="account-new-password-label">New password</label>
+        <input id="account-new-password" type="password" autocomplete="new-password" minlength="12" required>
+        <label for="account-confirm-password" id="account-confirm-password-label">Confirm password</label>
+        <input id="account-confirm-password" type="password" autocomplete="new-password" minlength="12" required>
+        <p id="account-setup-message" class="account-message" role="alert" hidden></p>
+        <button type="submit" id="account-setup-submit">Save password</button>
+      </form>
       <div id="account-signed-in" hidden>
         <h2 id="account-signed-in-title">Signed in</h2>
         <p id="account-verified-label" class="account-verified-label">Verified email</p>
