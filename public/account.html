@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f5">
+  <meta name="description" content="Charsiu customer account sign in.">
+  <title>Charsiu · Account</title>
+  <link rel="stylesheet" href="/site.css">
+  <script src="/account.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#account-main" id="account-skip">Skip to account</a>
+  <header class="site-header account-header"><div class="header-inner">
+    <a class="brand" href="/" aria-label="Charsiu home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" width="27" height="27"><path fill="white" d="M20.3 3.3C10.5 4.1 5.4 13.4 7.4 22.1c1.5 6.5 6.4 10.7 12.4 10.7 6.8 0 10.8-6.9 9.3-14.4C28.3 9.4 24.8 4 20.3 3.3Z"/><path fill="none" stroke="#171717" stroke-width="2.4" stroke-linecap="round" d="M15.7 6.9c-2.4 8.5 1.8 12.7 4.4 17.9"/></svg></span><span>CHARSIU</span></a>
+    <a class="account-back" href="/" id="account-home">Back to shop</a>
+    <label class="language-control"><span aria-hidden="true">文A</span><span class="sr-only" id="account-language-label">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="zh-Hans">简体</option><option value="zh-Hant">繁體</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
+  </div></header>
+  <main id="account-main" class="account-page"><div class="account-shell">
+    <p id="account-eyebrow" class="section-eyebrow">YOUR ACCOUNT</p>
+    <h1 id="account-title">Account</h1>
+    <p id="account-intro" class="account-intro">Sign in with your invited Charsiu account. You can keep browsing without signing in.</p>
+    <div class="account-card">
+      <p id="account-loading" role="status">Checking your account…</p>
+      <form id="account-form" hidden>
+        <label for="account-email" id="account-email-label">Email</label>
+        <input id="account-email" type="email" autocomplete="username" inputmode="email" required>
+        <label for="account-password" id="account-password-label">Password</label>
+        <input id="account-password" type="password" autocomplete="current-password" required>
+        <p id="account-message" class="account-message" role="alert" hidden></p>
+        <button type="submit" id="account-submit">Sign in</button>
+      </form>
+      <div id="account-signed-in" hidden>
+        <h2 id="account-signed-in-title">Signed in</h2>
+        <p id="account-verified-label" class="account-verified-label">Verified email</p>
+        <p id="account-verified-email" class="account-email-value"></p>
+        <p id="account-signed-in-message" class="account-message" role="alert" hidden></p>
+        <button type="button" id="account-sign-out" class="account-outline">Sign out</button>
+      </div>
+    </div>
+    <p id="account-scope" class="account-scope">Account sign in is in preview. Orders and payment are not yet available on this website.</p>
+  </div></main>
+</body>
+</html>

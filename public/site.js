@@ -61,6 +61,8 @@ const QUOTE_COPY = {
   ko: { reviewNotice: '픽업 시간이나 배송지 우편번호를 선택하면 서버의 읽기 전용 견적을 받을 수 있습니다. 주문과 결제는 아직 제공되지 않습니다.', pickupTimeLabel: '픽업 시간', pickupTimeChoose: '픽업 시간을 선택하세요', pickupTimeLoading: '픽업 시간을 불러오는 중…', quoteMissing: '각 그룹의 픽업 시간 또는 4자리 우편번호를 입력하세요.', pickupTimeUnavailable: '현재 픽업 시간을 불러올 수 없습니다.', postcodeLabel: '배송지 우편번호', postcodePlaceholder: '호주 4자리 우편번호', requestQuote: '현재 견적 확인', quoteLoading: '현재 가격과 재고 확인 중…', quoteFailed: '현재 견적을 불러올 수 없습니다. 다시 시도하세요.', quoteTitle: '서버 읽기 전용 견적', quoteShipping: '배송비', quoteTax: 'Square가 계산한 세금', quoteTotal: '견적 합계', quoteBlocked: '현재 선택으로는 이 그룹의 전체 견적을 확인할 수 없습니다.', quotePackageMissing: '이 상품 조합의 포장 크기가 아직 설정되지 않았습니다. 매장 픽업이나 다른 조합을 선택해 주세요.', quoteRateUnavailable: '현재 배송비를 확인할 수 없습니다. 잠시 후 다시 시도해 주세요.', quoteNote: '가격과 재고는 변경될 수 있습니다. 주문이나 결제는 진행되지 않습니다.' },
 };
 for (const [locale, copy] of Object.entries(QUOTE_COPY)) Object.assign(COPY[locale], copy);
+const ACCOUNT_NAV = { en: 'Account', 'zh-Hans': '账户', 'zh-Hant': '帳戶', ja: 'アカウント', ko: '계정' };
+for (const [locale, label] of Object.entries(ACCOUNT_NAV)) COPY[locale].navAccount = label;
 
 const nodes = {
   language: document.querySelector('#language'), search: document.querySelector('#search'),
@@ -557,6 +559,8 @@ function applyLanguage() {
   nodes.search.placeholder = t('searchPlaceholder');
   nodes.search.setAttribute('aria-label', t('searchLabel'));
   document.querySelector('.brand').setAttribute('aria-label', t('homeLabel'));
+  document.querySelector('.account-link').setAttribute('aria-label', t('navAccount'));
+  document.querySelector('.account-link').setAttribute('title', t('navAccount'));
   document.querySelector('.filters').setAttribute('aria-label', t('categoriesLabel'));
   document.querySelector('#close-detail').setAttribute('aria-label', t('closeDetail'));
   renderCatalog();
