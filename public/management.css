@@ -43,6 +43,16 @@
 .management-lines strong { display: block; font-size: 15px; line-height: 1.45; }
 .management-lines p { display: inline-block; margin: 7px 18px 0 0; }
 .management-footer { margin: 20px 0 0; color: #555; font-size: 13px; line-height: 1.5; }
+.management-refund-panel { margin-top: 18px; padding-top: 18px; border-top: 1px solid #ddd; }
+.management-refund-open, .management-refund-form button { min-height: 48px; padding: 10px 15px; border: 1px solid #111; border-radius: 10px; background: #111; color: #fff; font: inherit; font-weight: 750; cursor: pointer; }
+.management-refund-open:disabled, .management-refund-form button:disabled { opacity: .6; cursor: wait; }
+.management-refund-notice { margin-block: 12px 0 !important; }
+.management-refund-form { display: grid; gap: 12px; margin-top: 18px; padding: 16px; border: 1px solid #d4d4d4; border-radius: 12px; }
+.management-refund-form + .management-refund-form { margin-top: 12px; }
+.management-refund-form strong { overflow-wrap: anywhere; }
+.management-refund-field { display: grid; gap: 6px; font-size: 14px; font-weight: 700; }
+.management-refund-field input { width: min(100%, 170px); min-height: 48px; padding: 8px 12px; border: 1px solid #bfbfbf; border-radius: 8px; background: #fff; color: #111; font: inherit; font-size: 16px; }
+.management-refund-field input:focus-visible, .management-refund-open:focus-visible, .management-refund-form button:focus-visible { outline: 3px solid #555; outline-offset: 2px; }
 @media (max-width: 680px) {
   .management-header { gap: 10px; width: min(100% - 32px, 1240px); height: 72px; }
   .management-header .brand { font-size: 13px; letter-spacing: .1em; gap: 7px; }
