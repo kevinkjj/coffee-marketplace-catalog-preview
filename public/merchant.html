@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f5">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Charsiu · Merchant workspace</title>
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/management.css">
+  <script src="/management.js" type="module"></script>
+</head>
+<body data-management-scope="merchant">
+  <a class="skip-link" href="#management-main">Skip to content</a>
+  <header class="site-header"><div class="header-inner management-header">
+    <a class="brand" href="/" aria-label="Charsiu home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" width="27" height="27"><path fill="white" d="M20.3 3.3C10.5 4.1 5.4 13.4 7.4 22.1c1.5 6.5 6.4 10.7 12.4 10.7 6.8 0 10.8-6.9 9.3-14.4C28.3 9.4 24.8 4 20.3 3.3Z"/><path fill="none" stroke="#171717" stroke-width="2.4" stroke-linecap="round" d="M15.7 6.9c-2.4 8.5 1.8 12.7 4.4 17.9"/></svg></span><span>CHARSIU</span></a>
+    <a id="management-back" href="/">Back to shop</a>
+    <a id="management-account" href="/account.html">Customer account</a>
+    <label class="language-control"><span aria-hidden="true">文A</span><select id="management-language" aria-label="Language"><option value="en">EN</option><option value="zh-Hans">简体</option><option value="zh-Hant">繁體</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label>
+  </div></header>
+  <main id="management-main" class="management-page page-shell">
+    <p class="section-eyebrow" id="management-subtitle">Sandbox order snapshots</p>
+    <h1 id="management-title">Merchant workspace</h1>
+    <p id="management-intro" class="management-intro">Read-only test records. Last reconciled snapshots are not live Square order status.</p>
+    <p id="management-badge" class="management-badge">SANDBOX · READ ONLY</p>
+    <section class="management-access" aria-label="Account access">
+      <form id="management-sign-in" hidden>
+        <label for="management-email" id="management-email-label">Email</label>
+        <input id="management-email" type="email" autocomplete="username" inputmode="email" required>
+        <label for="management-password" id="management-password-label">Password</label>
+        <input id="management-password" type="password" autocomplete="current-password" required>
+        <button id="management-sign-in-button" type="submit">Sign in</button>
+        <a id="management-password-help" href="/account.html">Forgot your password?</a>
+      </form>
+      <div id="management-signed-in" hidden>
+        <p id="management-verified-label">Verified account</p>
+        <strong id="management-verified-email"></strong>
+        <button id="management-sign-out" type="button">Sign out</button>
+      </div>
+      <p id="management-status" role="status" aria-live="polite"></p>
+    </section>
+    <section id="management-panel" aria-labelledby="management-order-count" hidden>
+      <div class="management-heading"><h2 id="management-order-count">Saved orders</h2><button id="management-refresh" type="button">Reload saved snapshots</button></div>
+      <div class="management-scope"><h3 id="management-scope-title">Access scope</h3><ul id="management-scopes"></ul></div>
+      <ul id="management-orders" class="management-orders"></ul>
+      <p id="management-no-action" class="management-footer">Refunds, fulfillment, restocking and permission changes are unavailable here.</p>
+    </section>
+  </main>
+</body>
+</html>

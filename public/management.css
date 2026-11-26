@@ -1,0 +1,48 @@
+.management-header { gap: 24px; }
+.management-header a:not(.brand) { color: #333; text-decoration: none; font-size: 14px; font-weight: 700; }
+.management-header a:not(.brand):hover { text-decoration: underline; text-underline-offset: 4px; }
+.management-header #management-back { margin-left: auto; }
+.management-page { max-width: 980px; padding-block: clamp(42px, 7vw, 84px) 90px; }
+.management-page h1 { margin: 0; font-size: clamp(38px, 5vw, 54px); letter-spacing: -.05em; line-height: 1.05; }
+.management-intro { max-width: 720px; margin: 18px 0; color: #555; font-size: 17px; line-height: 1.6; }
+.management-badge { display: inline-block; margin: 0 0 25px; padding: 9px 12px; border-radius: 7px; background: #111; color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+.management-access, .management-scope, .management-order { background: #fff; border: 1px solid #dedede; border-radius: 18px; padding: clamp(19px, 4vw, 28px); }
+.management-access { max-width: 590px; }
+.management-access form { display: grid; }
+.management-access label { margin-bottom: 8px; font-size: 14px; font-weight: 750; }
+.management-access input { width: 100%; min-height: 52px; margin-bottom: 20px; padding: 11px 14px; border: 1px solid #c9c9c9; border-radius: 10px; background: #fff; color: #111; font-size: 16px; }
+.management-access button { min-height: 50px; padding: 11px 18px; border: 1px solid #111; border-radius: 10px; background: #111; color: #fff; cursor: pointer; font-weight: 750; }
+.management-access button:disabled, .management-heading button:disabled { opacity: .6; cursor: wait; }
+.management-access form a { margin-top: 18px; color: #333; font-size: 14px; font-weight: 700; }
+#management-signed-in { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+#management-signed-in p { margin: 0; color: #555; font-size: 14px; }
+#management-verified-email { overflow-wrap: anywhere; }
+#management-sign-out { margin-left: auto; background: #fff; color: #111; }
+#management-status { margin: 16px 0 0; color: #555; line-height: 1.55; }
+.management-heading { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin: 45px 0 18px; }
+.management-heading h2 { margin: 0; font-size: 25px; }
+.management-heading button { border: 0; padding: 9px 0; background: transparent; color: #111; font-size: 14px; font-weight: 750; text-decoration: underline; cursor: pointer; }
+.management-scope { margin-bottom: 18px; }
+.management-scope h3 { margin: 0 0 10px; font-size: 17px; }
+.management-scope ul { margin: 0; padding-left: 18px; color: #555; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.management-orders { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.management-order-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 17px; }
+.management-order-heading strong { overflow-wrap: anywhere; }
+.management-order-heading b { white-space: nowrap; }
+.management-order p { margin: 9px 0; color: #555; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.management-order p span:first-child { font-weight: 750; color: #222; }
+.management-order-state { display: inline-block; margin: 10px 0 !important; padding: 7px 10px; border-radius: 6px; background: #ececec; font-weight: 750; }
+.management-lines { list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid #ddd; }
+.management-lines li + li { margin-top: 16px; }
+.management-lines strong { font-size: 15px; }
+.management-lines p { display: inline-block; margin: 7px 18px 0 0; }
+.management-footer { margin: 20px 0 0; color: #555; font-size: 13px; line-height: 1.5; }
+@media (max-width: 680px) {
+  .management-header { gap: 10px; width: min(100% - 32px, 1240px); height: 72px; }
+  .management-header .brand { font-size: 13px; letter-spacing: .1em; gap: 7px; }
+  .management-header .brand-mark { width: 35px; height: 35px; }
+  .management-header #management-account { display: none; }
+  .management-header a:not(.brand) { font-size: 12px; }
+  .management-page { width: min(100% - 32px, 980px); }
+  .management-heading { align-items: start; flex-direction: column; }
+}
