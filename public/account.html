@@ -49,7 +49,14 @@
         <button type="button" id="account-sign-out" class="account-outline">Sign out</button>
       </div>
     </div>
-    <p id="account-scope" class="account-scope">Account sign in is in preview. Orders and payment are not yet available on this website.</p>
+    <section id="account-orders" class="account-orders" aria-labelledby="account-orders-title" hidden>
+      <div class="account-orders-heading"><h2 id="account-orders-title">Sandbox test orders</h2>
+        <button type="button" id="account-orders-refresh" class="account-orders-refresh">Refresh</button></div>
+      <p id="account-orders-note" class="account-scope">Last reconciled Sandbox snapshot. This is not a live Square order status.</p>
+      <p id="account-orders-status" class="account-scope" role="status"></p>
+      <ul id="account-orders-list" class="account-orders-list"></ul>
+    </section>
+    <p id="account-scope" class="account-scope">Account sign in is in preview. Ordering and payment are not available on this website.</p>
   </div></main>
 </body>
 </html>

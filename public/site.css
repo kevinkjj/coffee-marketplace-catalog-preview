@@ -40,6 +40,15 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .account-email-value { overflow-wrap: anywhere; margin: 0 0 28px; }
 .account-message { color: #8c322f; font-size: 14px; line-height: 1.5; margin: 0 0 18px; }
 .account-scope { color: #666; font-size: 13px; line-height: 1.5; margin: 18px 0 0; }
+.account-orders { margin-top: 32px; }
+.account-orders-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.account-orders-heading h2 { margin: 0; font-size: 22px; }
+.account-orders-refresh { border: 0; padding: 8px 0; background: none; color: #111; font-size: 14px; font-weight: 750; text-decoration: underline; cursor: pointer; }
+.account-orders-refresh:disabled { color: #888; cursor: wait; }
+.account-orders-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+.account-order { padding: 18px; border: 1px solid #dedede; border-radius: 16px; background: #fff; }
+.account-order strong { display: block; font-size: 15px; overflow-wrap: anywhere; }
+.account-order p { margin: 8px 0 0; color: #444; font-size: 14px; line-height: 1.5; }
 .language-control { position: relative; display: flex; align-items: center; gap: 7px; color: #333; font-size: 17px; font-weight: 700; }
 .language-control select { appearance: none; border: 0; background: transparent; color: #333; padding: 8px 19px 8px 5px; cursor: pointer; font-size: 14px; font-weight: 700; }
 .language-control::after { content: ""; position: absolute; right: 4px; top: calc(50% - 4px); width: 6px; height: 6px; border-right: 1.5px solid #333; border-bottom: 1.5px solid #333; transform: rotate(45deg); pointer-events: none; }
