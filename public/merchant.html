@@ -42,7 +42,17 @@
     <section id="management-panel" aria-labelledby="management-order-count" hidden>
       <div class="management-heading"><h2 id="management-order-count">Saved orders</h2><button id="management-refresh" type="button">Reload saved snapshots</button></div>
       <div class="management-scope"><h3 id="management-scope-title">Access scope</h3><ul id="management-scopes"></ul></div>
+      <section id="management-queue" class="management-queue" aria-label="Saved order overview" hidden>
+        <p id="management-queue-summary"></p>
+        <div class="management-filters" role="group" aria-label="Filter saved orders">
+          <button id="management-filter-all" type="button" aria-controls="management-orders" aria-pressed="true">All</button>
+          <button id="management-filter-open" type="button" aria-controls="management-orders" aria-pressed="false">Needs review</button>
+          <button id="management-filter-partial" type="button" aria-controls="management-orders" aria-pressed="false">Partial refund</button>
+          <button id="management-filter-closed" type="button" aria-controls="management-orders" aria-pressed="false">Closed</button>
+        </div>
+      </section>
       <ul id="management-orders" class="management-orders"></ul>
+      <p id="management-empty-filter" class="management-footer" hidden>No saved orders match this filter.</p>
       <p id="management-no-action" class="management-footer">Refunds, fulfillment, restocking and permission changes are unavailable here.</p>
     </section>
   </main>

@@ -25,6 +25,12 @@
 .management-scope { margin-bottom: 18px; }
 .management-scope h3 { margin: 0 0 10px; font-size: 17px; }
 .management-scope ul { margin: 0; padding-left: 18px; color: #555; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.management-queue { margin: 20px 0; }
+.management-queue p { margin: 0 0 12px; color: #555; font-size: 14px; line-height: 1.5; }
+.management-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.management-filters button { min-height: 40px; padding: 8px 13px; border: 1px solid #d1d1d1; border-radius: 999px; background: #fff; color: #222; font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; }
+.management-filters button[aria-pressed="true"] { background: #111; border-color: #111; color: #fff; }
+.management-filters button:focus-visible { outline: 3px solid #555; outline-offset: 2px; }
 .management-orders { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
 .management-order-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 17px; }
 .management-order-heading strong { overflow-wrap: anywhere; }
