@@ -53,6 +53,8 @@
 .management-refund-field { display: grid; gap: 6px; font-size: 14px; font-weight: 700; }
 .management-refund-field input { width: min(100%, 170px); min-height: 48px; padding: 8px 12px; border: 1px solid #bfbfbf; border-radius: 8px; background: #fff; color: #111; font: inherit; font-size: 16px; }
 .management-refund-field input:focus-visible, .management-refund-open:focus-visible, .management-refund-form button:focus-visible { outline: 3px solid #555; outline-offset: 2px; }
+.management-return-confirmation { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; }
+.management-return-confirmation input { width: 20px; height: 20px; flex: none; accent-color: #111; }
 @media (max-width: 680px) {
   .management-header { gap: 10px; width: min(100% - 32px, 1240px); height: 72px; }
   .management-header .brand { font-size: 13px; letter-spacing: .1em; gap: 7px; }
